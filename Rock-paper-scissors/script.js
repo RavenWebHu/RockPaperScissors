@@ -71,7 +71,6 @@ function game(){
             wins++;
         }
         else if(round.includes("tie")){
-            console.log("It's a tie...");
             i--;
         }
         else{
