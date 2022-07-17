@@ -30,6 +30,7 @@ body{
     background-color: white;
     margin-bottom: 40px;
 }
+
 img{
     width: 100px;
     padding: 10px;
@@ -37,6 +38,11 @@ img{
 .compimg{
     border: 2px solid black;
     border-radius: 20px;
+}
+.compimgactive{
+    border: 2px solid red;
+    border-radius: 20px;
+    scale: 1.1;
 }
 h1{
     font-size: 50px;
