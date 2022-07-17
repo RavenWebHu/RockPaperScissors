@@ -1,12 +1,23 @@
 <html>
 <head>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <meta name="description" content="Rock paper scissors">
+    <title>Rock, Paper, Scissors!</title>
 </head>
 <body>
-    <script>
-
-        game();
-               
-    </script>
+    <div id="container">
+        <div class="title"><h1>Rock, Paper, Scissors!</h1></div>
+        <div class="playroom">
+            <a><img src="stone.png" alt="rock" onclick="game(this.id)" id="rock"></a>
+            <a><img src="scissors.png" alt="scissors" onclick="game(this.id)" id="scissors"></a>
+            <a><img src="paper.png" alt="paper" onclick="game(this.id)" id="paper"></a>
+        </div>
+        <div class="playroom">
+            <img src="stone.png" alt="rock" class="compimg">
+            <img src="scissors.png" alt="scissors" class="compimg">
+            <img src="paper.png" alt="paper" class="compimg">
+        </div>
+    </div>
 </body>
 </html>

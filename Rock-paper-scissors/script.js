@@ -1,3 +1,7 @@
+let wins = 0;
+let loses = 0;
+let rounds = 0;
+
 function computerPlay(){
     let rn;
     rn = Math.floor(Math.random() * 9 );
@@ -50,45 +54,31 @@ function playRound(playerSelection, computerSelection)  {
  
 }
 
-function game(){
-    let computerSelection;
-    let playerSelection;
-    let wins = 0;
-    let loses = 0;
-    let round;
-    let winner;
+function game(selection){
+    let computerSelection = computerPlay();
+    let playerSelection = selection;
 
-    for(let i = 0 ; i < 5 ; i++){
-        playerSelection = window.prompt("Please show rock, paper or scissors");
-        computerSelection = computerPlay();
         round = playRound(playerSelection, computerSelection);
-
-        if (round.includes("Spock")){
-            i--;
-            console.log("Unvalid round!");
-        }        
-        else if(round.includes("win")){
+        
+        if(round.includes("win")){
             wins++;
+            rounds++;
         }
         else if(round.includes("tie")){
-            i--;
+            return;
         }
         else{
             loses++;
-        }                
+            rounds++;
+        }
+
+        if (rounds === 5){
+            alert("Round is over");
+            rounds = 0;
+        }
 
         console.log(computerSelection);
         console.log(round);
-    }
-    if (wins > loses){
-        winner = "You've won this round!";
-    }
-    else if (wins === loses){
-        winner = "This match is a tie!";
-    }
-    else{
-        winner = "You've lost this round!";
-    }
+    
 
-    console.log(winner);
 }
