@@ -56,3 +56,27 @@ a:hover{
     scale: 1.1;
     border: 2px solid red;
 }
+ 
+ #roundover-active {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 50px;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    border: 0px;
+    border-radius: 20px;
+  }
+  #roundover-inactive{
+    visibility: hidden;
+  }
+  .resetbtn{
+    width: 150px;
+    height: 30px;
+    background-color: lightgray;
+    color: white;
+    border: 0px;
+    border-radius: 20px;
+    font-size: 20px;
+  }
