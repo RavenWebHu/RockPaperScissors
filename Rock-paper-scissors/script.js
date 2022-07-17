@@ -72,10 +72,17 @@ function game(selection){
             rounds++;
         }
 
+        document.getElementById('playerw').innerHTML = wins;
+        document.getElementById('compw').innerHTML = loses;
+
         if (rounds === 5){
             alert("Round is over");
+            wins = 0;
+            loses = 0;
             rounds = 0;
         }
+
+
 
         console.log(computerSelection);
         console.log(round);
