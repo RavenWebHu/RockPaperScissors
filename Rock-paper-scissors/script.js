@@ -69,6 +69,23 @@ function resetCSS(img){
     img.setAttribute('class', 'compimg');
 }
 
+function inactivePlay(){                                              //Inactivates player selection
+    let div = document.getElementById('playerselector');
+    let compimgs = div.querySelectorAll('img');
+    compimgs.forEach(inactiveOnClick);
+}
+function inactiveOnClick(img){
+    img.setAttribute('onclick', '');
+}
+function activePlay(){                                              //Activates player selection
+    let div = document.getElementById('playerselector');
+    let compimgs = div.querySelectorAll('img');
+    compimgs.forEach(activeOnClick);
+}
+function activeOnClick(img){
+    img.setAttribute('onclick', 'game(this.id)');
+}
+
 
 function game(selection){
     resetSelection();
@@ -82,10 +99,7 @@ function game(selection){
         if(round.includes("win")){
             wins++;
         }
-        else if(round.includes("tie")){
-            return;
-        }
-        else{
+        else if(round.includes("lose")){
             loses++;
         }
 
@@ -101,6 +115,7 @@ function game(selection){
                 matchOutcome.innerHTML = "You've lost this match!"
             }
             roundover.setAttribute('id', 'roundover-active')
+            inactivePlay();
         }
 }
 
@@ -113,4 +128,5 @@ function resetGame(){
     document.getElementById('playerw').innerHTML = wins;
     document.getElementById('compw').innerHTML = loses;
     document.getElementById('roundstat').innerHTML = '';
+    activePlay();
 }
